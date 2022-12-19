@@ -1,19 +1,17 @@
 function App() {
-  // Data Members
-  let project = "Counter Application";
-  let btnValue = "Click mee";
+  //stateless variable
+  let counter = 100;
 
-  // Member :: Type is Functions
-  let clickme = () => alert();
-  let increment = () => {};
-  let decrement = () => {};
+  let increment = () => {
+    counter = counter + 1;
+    console.log(counter);
+  };
 
   return (
     <div>
-      <h1> {project} </h1>
-      <input type="button" value={btnValue} onClick={clickme} />
-
-      <input type="button" value="increment" onClick={increment} />
+      <h1>Counter Application</h1>
+      <h1> {counter} </h1>
+      <input type="button" value="Increment" onClick={increment} />
     </div>
   );
 }

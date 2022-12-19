@@ -1,22 +1,20 @@
-//multi Tag
-
 function App() {
   return (
     <div>
-      <Person />
-      <Person />
-      <Person />
-      <Person />
-      <Person />
+      <Person name="Rahul" />
+      <Person name="Rohit" />
+      <Person name="mahesh" />
+      <Person name="prajwal" />
+      <Person name="suraj" />
     </div>
   );
 }
 
-function Person() {
+function Person({ name }) {
   return (
     <div>
       <img src="https://picsum.photos/400" alt="" />
-      <h1>Person name</h1>
+      <h1>Person Name : {name} </h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
         repellendus adipisci dignissimos tenetur possimus eaque architecto

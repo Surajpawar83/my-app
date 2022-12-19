@@ -1,11 +1,11 @@
 function App() {
-  let project = "my react project";
-  let username = "rahul";
+  let project = "Counter Application";
+  let btnValue = "Click mee";
 
   return (
     <div>
       <h1> {project} </h1>
-      <h1>Hello {username} </h1>
+      <input type="button" value={btnValue} />
     </div>
   );
 }

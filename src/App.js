@@ -1,22 +1,10 @@
 import { useState } from "react";
 
 function App() {
-  let [list] = useState([1, 1, 1, 1, 1, 1, 1, 1, 1]);
-
   let [theme, setTheme] = useState("primary");
 
-  let makePrimaryTheme = () => {
-    theme = "primary";
-    setTheme(theme);
-  };
-
-  let makeSuccesTheme = () => {
-    theme = "success";
-    setTheme(theme);
-  };
-
-  let makeDangerTheme = () => {
-    theme = "danger";
+  let updateTheme = (p1 = "primary") => {
+    theme = p1;
     setTheme(theme);
   };
 
@@ -30,33 +18,27 @@ function App() {
         <input
           className="btn btn-primary"
           type="button"
-          value=""
-          onClick={makePrimaryTheme}
+          value="primary"
+          //onClick={updateTheme}
+          onClick={() => updateTheme("primary")}
         />
 
         <input
           className="btn btn-success"
           type="button"
-          value=""
-          onClick={makeSuccesTheme}
+          value="success"
+          //onClick={updateTheme}
+          onClick={() => updateTheme("success")}
         />
 
         <input
           className="btn btn-danger"
           type="button"
-          value=""
-          onClick={makeDangerTheme}
+          value="danger"
+          //onClick={updateTheme}
+          onClick={() => updateTheme("danger")}
         />
       </div>
-
-      {list.map((item) => (
-        <div className={`alert alert-${theme} my-1`}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos,
-          natus fugiat incidunt pariatur delectus libero in dicta beatae
-          adipisci ipsa eius sint autem totam earum rerum ab consequatur dolor
-          omnis.
-        </div>
-      ))}
     </div>
   );
 }

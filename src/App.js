@@ -1,45 +1,27 @@
+import { useState } from "react";
+
 function App() {
-  let clickMe1 = () => {
-    console.log("Hello");
-  };
+  let [message, setMessage] = useState("Abc");
 
-  let clickMe2 = (e) => {
-    console.log(e);
-  };
+  let updateMessage = (e) => {
+    // e.target == document.querySelector("input");
 
-  let clickMe3 = (p1) => {
-    console.log(p1);
-  };
-
-  let clickMe4 = (e, p1) => {
-    console.log(e, p1);
+    message = e.target.value;
+    setMessage(message);
   };
 
   return (
     <div>
-      <h1>btn Click demo</h1>
-
-      <input type="button" value="Click me 1" onClick={clickMe1} />
-
-      <input type="button" value="Click me 2" onClick={clickMe2} />
+      <h1>Working with Input</h1>
 
       <input
-        type="button"
-        value="Click me 3"
-        onClick={() => clickMe3("primary")}
+        type="text"
+        placeholder="Enter message"
+        value={message}
+        onChange={updateMessage}
       />
 
-      <input
-        type="button"
-        value="Click me 3"
-        onClick={() => clickMe3("danger")}
-      />
-
-      <input
-        type="button"
-        value="Click me 4"
-        onClick={(e) => clickMe4(e, "ASCH LIHL AHE")}
-      />
+      <h1>{message}</h1>
     </div>
   );
 }
